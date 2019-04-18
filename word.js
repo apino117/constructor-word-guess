@@ -53,15 +53,23 @@ class Word {
         }); 
 
         // Join letters
-        return wordString.join("");
+        console.log(wordString.join(""));
 
     }
-    guessCharacter(character) {
-        character.checkCharacter();
+    guessCharacter(characterGuessed) {
+
+        // For every letter in the array check if it's been guessed 
+        this.letterArray.forEach(function(letter) {
+
+            // Check the letter against the guessed letter
+            console.log(letter.checkCharacter(characterGuessed));
+        }); 
     }
 }
 
 
 const butts = new Word ([b, u, t, t, s]);
 
-butts.toString();
+// butts.toString();
+
+butts.guessCharacter("t");
