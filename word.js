@@ -36,16 +36,25 @@ const x = new Letter ("x", false);
 const y = new Letter ("y", false);
 const z = new Letter ("z", false);
 
-// Word Cobstructor
+// Word Constructor
 class Word {
 
     constructor(letterArray) {
         this.letterArray = letterArray;
     }
     toString() {
+
+        // Create an array to temporarily hold letters
+        var wordString = [];
+
+        // Push letters from word to array
         this.letterArray.forEach(function(letter) {
-            letter.returnCharacter();
-        }).join(" ");  
+            wordString.push(letter.character);
+        }); 
+
+        // Join letters
+        return wordString.join("");
+
     }
     guessCharacter(character) {
         character.checkCharacter();
@@ -55,4 +64,4 @@ class Word {
 
 const butts = new Word ([b, u, t, t, s]);
 
-console.log(butts.toString());
+butts.toString();
