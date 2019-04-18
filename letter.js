@@ -18,8 +18,8 @@ class Letter {
     }
     checkCharacter(characterGuessed) {
         if (characterGuessed === this.character) {
-            hasBeenGuessed = true;
-        }
+            this.hasBeenGuessed = true;
+        } return this.hasBeenGuessed
     }
 }
 
@@ -49,5 +49,14 @@ const w = new Letter ("w", false);
 const x = new Letter ("x", false);
 const y = new Letter ("y", false);
 const z = new Letter ("z", false);
+
+
+// Check to make sure the methods work before moving on
+
+// console.log(z.checkCharacter("z"));
+
+// z.hasBeenGuessed = false;
+
+// console.log(z.returnCharacter());
 
 module.exports = Letter;

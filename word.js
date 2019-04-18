@@ -45,7 +45,7 @@ class Word {
     toString() {
         this.letterArray.forEach(function(letter) {
             letter.returnCharacter();
-        }).join("");  
+        }).join(" ");  
     }
     guessCharacter(character) {
         character.checkCharacter();
@@ -55,4 +55,4 @@ class Word {
 
 const butts = new Word ([b, u, t, t, s]);
 
-console.log(butts);
+console.log(butts.toString());
