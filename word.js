@@ -72,3 +72,5 @@ const butts = new Word([b, u, t, t, s]);
 butts.toString();
 
 butts.guessCharacter("t");
+
+module.exports = Word;
