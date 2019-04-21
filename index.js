@@ -32,17 +32,8 @@ const x = new Letter("x", false);
 const y = new Letter("y", false);
 const z = new Letter("z", false);
 
-// Words to choose from 
-const butts = [b, u, t, t, s];
-const karate = [k, a, r, a, t, e];
-const dank = [d, a, n, k];
-const alligator = [a, l, l, i, g, a, t, o, r];
-const coriander = [c, o, r, i, a, n, d, e, r];
 
-var wordArray = [
-    butts, karate, dank, alligator, coriander
-]
+const butts = word(b,u,t,t,s)
 
-var randomWord = wordArray[Math.floor((Math.random() * 5) + 1)];
+console.log(butts.toString());
 
-console.log(randomWord);
