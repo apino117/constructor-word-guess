@@ -23,6 +23,8 @@ class Letter {
     }
 }
 
+// const z = new Letter ("z", false);
+
 // Check to make sure the methods work before moving on
 
 // console.log(z.checkCharacter("z"));

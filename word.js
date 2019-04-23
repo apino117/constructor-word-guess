@@ -19,6 +19,7 @@ class Word {
 
         // Create an array to temporarily hold letters
         var wordString = [];
+        var toStringArray = [];
 
         // Push letters from word to array
         for (var i = 0; i < this.letterArray.length; i++) {
@@ -27,8 +28,9 @@ class Word {
 
         // Join letters
         for (var j = 0; j < wordString.length; j++) {
-            console.log(wordString[j].returnCharacter());
+            toStringArray.push(wordString[j].returnCharacter());
         };
+        console.log(toStringArray.join(" "));
 
     }
     guessCharacter(characterGuessed) {
@@ -43,9 +45,9 @@ class Word {
 
 const butts = new Word("butts");
 
-// butts.toString();
+butts.toString();
 
-butts.guessCharacter("t");
+// butts.guessCharacter("t");
 
 // console.log(butts);
 
