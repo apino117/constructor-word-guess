@@ -1,39 +1,30 @@
 // Require in word to have all our properties available
 var Word = require("./word")
 
+var inquierer = require("inquirer");
+
 // Create a new word object 
 var word = new Word();
 
-// Entire alphabet(?)
-const a = new Letter("a", false);
-const b = new Letter("b", false);
-const c = new Letter("c", false);
-const d = new Letter("d", false);
-const e = new Letter("e", false);
-const f = new Letter("f", false);
-const g = new Letter("g", false);
-const h = new Letter("h", false);
-const i = new Letter("i", false);
-const j = new Letter("j", false);
-const k = new Letter("k", false);
-const l = new Letter("l", false);
-const m = new Letter("m", false);
-const n = new Letter("n", false);
-const o = new Letter("o", false);
-const p = new Letter("p", false);
-const q = new Letter("q", false);
-const r = new Letter("r", false);
-const s = new Letter("s", false);
-const t = new Letter("t", false);
-const u = new Letter("u", false);
-const v = new Letter("v", false);
-const w = new Letter("w", false);
-const x = new Letter("x", false);
-const y = new Letter("y", false);
-const z = new Letter("z", false);
+var wordArray = ["butts", "lame"];
+
+var wordToGuess = new Word(wordArray[Math.floor((Math.random() * wordArray.length) + 0)]);
+
+console.log(wordToGuess.toString());
+
+inquierer.prompt([
+    // Guess a letter
+    {
+        type: "input",
+        message: "guess a leter",
+        name: "characterGuessed",
+    }
+  ])
+  .then(answers => {
+    // Run the check characters function
+    console.log("You've Guessed " + answers.characterGuessed);
+  });
 
 
-const butts = word(b,u,t,t,s)
 
-console.log(butts.toString());
 

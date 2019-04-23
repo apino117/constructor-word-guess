@@ -5,47 +5,68 @@
 // Require in letter to have all our properties available
 var Letter = require("./letter")
 
-var letter = new Letter
+// var letter = new Letter
 
 // Word Constructor
 class Word {
 
-    constructor(letterArray) {
-        this.letterArray = letterArray;
+    constructor(letters) {
+        this.letters = letters;
     }
     toString() {
 
-        this.letterArray.split("");
+        this.letters.split("");
 
-        // Create an array to temporarily hold letters
+        // Create arrays to temporarily hold things
         var wordString = [];
         var toStringArray = [];
 
-        // Push letters from word to array
-        for (var i = 0; i < this.letterArray.length; i++) {
-            wordString.push(new Letter(this.letterArray[i], false))
+        // Take each letter from our plain old string and make it a dynamic letter object
+        for (var i = 0; i < this.letters.length; i++) {
+            wordString.push(new Letter(this.letters[i]))
         };
 
-        // Join letters
+        // Then take each letter from THAT array and check if it's been guessed or not 
+        for (var j = 0; j < wordString.length; j++) {
+            toStringArray.push(wordString[j].returnCharacter());
+        };
+
+        // String all the characters together
+        console.log(toStringArray.join(" "));
+    }
+    guessCharacter(characterGuessed) {
+
+        this.letters.split("");
+
+        // Create arrays to temporarily hold things
+        var wordString = [];
+        var toStringArray = [];
+
+        // Take each letter from our plain old string and make it a dynamic letter object
+        for (var i = 0; i < this.letters.length; i++) {
+            wordString.push(new Letter(this.letters[i], false))
+        };
+
+        for (var h = 0; h < wordString.length; h++) {
+            console.log(wordString[h].checkCharacter(characterGuessed));
+        };
+
+        // ------ Struggling to modularize this bit ------ //
         for (var j = 0; j < wordString.length; j++) {
             toStringArray.push(wordString[j].returnCharacter());
         };
         console.log(toStringArray.join(" "));
 
     }
-    guessCharacter(characterGuessed) {
-
-        for (var h = 0; h < wordString.length; h++) {
-            console.log(wordString[h].checkCharacter(characterGuessed));
-        };
-
-    }
 }
 
 
-const butts = new Word("butts");
 
-butts.toString();
+// const butts = new Word("butts");
+
+// console.log(butts.letters[0]);
+
+// butts.toString();
 
 // butts.guessCharacter("t");
 
