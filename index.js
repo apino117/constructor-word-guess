@@ -6,25 +6,46 @@ var inquierer = require("inquirer");
 // Create a new word object 
 var word = new Word();
 
-var wordArray = ["butts", "lame"];
+var wordArray = ["butts", "burgers"];
 
-var wordToGuess = new Word(wordArray[Math.floor((Math.random() * wordArray.length) + 0)]);
+var randomNumber = Math.floor((Math.random() * wordArray.length) + 0);
 
-console.log(wordToGuess.toString());
+var randomWord = new Word(wordArray[randomNumber]);
 
-inquierer.prompt([
+// console.log(randomWord.toString());
+
+// Make a function for the callback
+function askForLetter() {
+
+  inquierer.prompt([
     // Guess a letter
     {
-        type: "input",
-        message: "guess a leter",
-        name: "characterGuessed",
+      type: "input",
+      message: "guess a letter, please",
+      name: "characterGuessed",
     }
   ])
-  .then(answers => {
-    // Run the check characters function
-    console.log("You've Guessed " + answers.characterGuessed);
-  });
+    .then(answers => {
+      // Run the check characters function
+      console.log(randomWord.guessCharacter(answers.characterGuessed));
 
 
+      // // // If the word is guessed...
+      // if (this.finalOutput.includes(!"_")) {
+      //   return;
+      // } else if (this.finalOutput.includes("_")) {
+      //   askForLetter();
+      // }
+    });
+}
+
+
+askForLetter();
+
+
+// ---------------------------------------------------       PSUEDO-CODE: WHAT WE NEED TO DO: -------------------------------------------- // 
+
+// 1) Have a tangible object for the final output so we can see if it includes underscores or not 
+// 2) Have the letters of the word array be dynamic, have scoping in general in better shape 
 
 

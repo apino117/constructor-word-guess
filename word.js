@@ -5,7 +5,11 @@
 // Require in letter to have all our properties available
 var Letter = require("./letter")
 
-// var letter = new Letter
+var letter = new Letter;
+
+// Universal Arrays for the Functions
+var wordString = [];
+var toStringArray = [];
 
 // Word Constructor
 class Word {
@@ -13,13 +17,9 @@ class Word {
     constructor(letters) {
         this.letters = letters;
     }
-    toString() {
+    returnString() {
 
         this.letters.split("");
-
-        // Create arrays to temporarily hold things
-        var wordString = [];
-        var toStringArray = [];
 
         // Take each letter from our plain old string and make it a dynamic letter object
         for (var i = 0; i < this.letters.length; i++) {
@@ -38,10 +38,6 @@ class Word {
 
         this.letters.split("");
 
-        // Create arrays to temporarily hold things
-        var wordString = [];
-        var toStringArray = [];
-
         // Take each letter from our plain old string and make it a dynamic letter object
         for (var i = 0; i < this.letters.length; i++) {
             wordString.push(new Letter(this.letters[i], false))
@@ -55,8 +51,12 @@ class Word {
         for (var j = 0; j < wordString.length; j++) {
             toStringArray.push(wordString[j].returnCharacter());
         };
-        console.log(toStringArray.join(" "));
 
+        var finalOutput = toStringArray.join(" ");
+
+        console.log(finalOutput);
+
+        this.finalOutput = finalOutput;
     }
 }
 
@@ -66,7 +66,7 @@ class Word {
 
 // console.log(butts.letters[0]);
 
-// butts.toString();
+// butts.returnString();
 
 // butts.guessCharacter("t");
 
