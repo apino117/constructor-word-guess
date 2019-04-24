@@ -16,4 +16,4 @@ Thanks!
 
 https://apino117.github.io/Alex-Pino-Portfolio/
 
-![Waving_Gif](assets/images/waving.gif) 
+![Give_up_Gif](give_up.gif) 
