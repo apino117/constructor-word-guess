@@ -4,7 +4,7 @@ var Word = require("./word")
 var inquierer = require("inquirer");
 
 // Create a new word object 
-var word = new Word();
+// var word = new Word();
 
 var wordArray = ["butts", "burgers"];
 
@@ -12,7 +12,9 @@ var randomNumber = Math.floor((Math.random() * wordArray.length) + 0);
 
 var randomWord = new Word(wordArray[randomNumber]);
 
-// console.log(randomWord.toString());
+console.log(randomWord);
+
+
 
 // Make a function for the callback
 function askForLetter() {

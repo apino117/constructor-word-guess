@@ -8,31 +8,31 @@ var Letter = require("./letter")
 var letter = new Letter;
 
 // Universal Arrays for the Functions
-var wordString = [];
-var toStringArray = [];
+// var wordString = [];
+
 
 // Word Constructor
 class Word {
 
     constructor(letters) {
-        this.letters = letters;
+        this.letters = letters.split("");
+        const lettersArr = [];
+        for (var i = 0; i < letters.length; i++) {
+            lettersArr.push(new Letter(this.letters[i], false))
+        }
+        this.lettersArr = lettersArr;
     }
     returnString() {
 
-        this.letters.split("");
+        var toStringArray = [];
 
-        // Take each letter from our plain old string and make it a dynamic letter object
-        for (var i = 0; i < this.letters.length; i++) {
-            wordString.push(new Letter(this.letters[i]))
-        };
+        for (var i = 0; i < this.lettersArr.length; i++) {
+            toStringArray.push(this.lettersArr[i].returnCharacter());
+        }
 
-        // Then take each letter from THAT array and check if it's been guessed or not 
-        for (var j = 0; j < wordString.length; j++) {
-            toStringArray.push(wordString[j].returnCharacter());
-        };
-
-        // String all the characters together
+        // // String all the characters together
         console.log(toStringArray.join(" "));
+
     }
     guessCharacter(characterGuessed) {
 
@@ -62,11 +62,12 @@ class Word {
 
 
 
-// const butts = new Word("butts");
+
+const butts = new Word("butts");
 
 // console.log(butts.letters[0]);
 
-// butts.returnString();
+butts.returnString();
 
 // butts.guessCharacter("t");
 
