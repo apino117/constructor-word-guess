@@ -30,6 +30,7 @@ function askForLetter() {
     .then(answers => {
       // Run the check characters function
       console.log(randomWord.guessCharacter(answers.characterGuessed));
+      word.returnString();
 
 
       // // // If the word is guessed...

@@ -19,7 +19,7 @@ class Letter {
     checkCharacter(characterGuessed) {
         if (characterGuessed === this.character) {
             this.hasBeenGuessed = true;
-        } return this.hasBeenGuessed
+        } return this.hasBeenGuessed;
     }
 }
 

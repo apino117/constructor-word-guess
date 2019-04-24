@@ -36,38 +36,20 @@ class Word {
     }
     guessCharacter(characterGuessed) {
 
-        this.letters.split("");
-
-        // Take each letter from our plain old string and make it a dynamic letter object
-        for (var i = 0; i < this.letters.length; i++) {
-            wordString.push(new Letter(this.letters[i], false))
+        for (var i = 0; i < this.lettersArr.length; i++) {
+            console.log(this.lettersArr[i].checkCharacter(characterGuessed));
         };
-
-        for (var h = 0; h < wordString.length; h++) {
-            console.log(wordString[h].checkCharacter(characterGuessed));
-        };
-
-        // ------ Struggling to modularize this bit ------ //
-        for (var j = 0; j < wordString.length; j++) {
-            toStringArray.push(wordString[j].returnCharacter());
-        };
-
-        var finalOutput = toStringArray.join(" ");
-
-        console.log(finalOutput);
-
-        this.finalOutput = finalOutput;
     }
 }
 
 
 
 
-const butts = new Word("butts");
+// const butts = new Word("butts");
 
 // console.log(butts.letters[0]);
 
-butts.returnString();
+// butts.returnString();
 
 // butts.guessCharacter("t");
 
